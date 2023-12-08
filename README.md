@@ -12,7 +12,7 @@ Required Libraries for this project
 	pip install  mysqlclient==2.0.3
 	pip install PyMySQL==1.0.2
 	pip install scikit-learn==0.23.2
-	ip install  pandas==1.1.4
+	pip install  pandas==1.1.4
 
 
 Steps to start project
