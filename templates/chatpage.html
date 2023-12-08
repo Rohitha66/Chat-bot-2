@@ -1,0 +1,114 @@
+
+{% extends 'userbase.html' %}
+{% block content %}
+
+	
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+.containr {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.darker {
+  border-color: #ccc;
+  background-color: #ddd;
+}
+
+.containr::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.containr img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.containr img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+.time-left {
+  float: left;
+  color: #999;
+}
+</style>
+</head>
+<body>
+
+<center><table width="70%">
+<tr>
+	<td>
+
+
+
+
+{% for d in data %}
+
+
+	{% if d.name == 'chatbot' %}
+	 <div class="containr darker">
+	  <img src="{{baseUrl}}/chat-bot.png" alt="Avatar" class="right" style="width:100%;">
+	  <p>
+	  {{d.message|linebreaks}}
+
+	  
+	</div>
+	
+	{% else %}
+	 <div class="containr ">
+	  <img src="{{baseUrl}}/s.png" alt="Avatar" class="left" style="width:100%;">
+	  <p>
+	  {{d.message|linebreaks}}
+		</p>
+	  <span class="time-right">User</span>
+	</div>
+
+
+{% endif %}
+{% endfor %}
+
+
+<table width="100%">
+<tr>
+	<td>
+	<form method="post" action="/chataction/">
+												 	{% csrf_token %} 
+	<input type="text" name="chat" autofocus style="background-color:white; 
+              border: solid 1px #6633ff;
+              height: 40px; 
+              font-size:18px; 
+              vertical-align:9px;color:#ff3300" value=""  placeholder="Enter your Query">
+			  </form>
+</td>
+	
+	</form></td>
+</tr>
+</table>
+</tr>
+</table>
+
+</body>
+</html>
+
+
+{% endblock %}

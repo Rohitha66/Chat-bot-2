@@ -1,0 +1,224 @@
+
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Emotion Chatbot</title>
+    <!-- //google-fonts -->
+    <!-- Template CSS Style link -->
+		<link rel="stylesheet" href="{% static 'assets/css/style-starter.css' %}" >
+</head>
+
+<body>
+    <!--header-->
+    <header id="site-header" class="fixed-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg stroke">
+                <h1>
+                    <a class="navbar-brand" href="index.html">
+Emotion Chatbot
+                    <span class="sr-only">(current)</span></a>
+                </h1>
+                <!-- if logo is image enable this   
+    <a class="navbar-brand" href="#index.html">
+        <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+    <span class="sr-only">(current)</span></a> -->
+                <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
+                    data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav mx-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/adminlogin">Admin<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/ulogin">Users<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/userreg">Registration<span class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- toggle switch for light and dark theme -->
+                <div class="cont-ser-position">
+                    <nav class="navigation">
+                        <div class="theme-switch-wrapper">
+                            <label class="theme-switch" for="checkbox">
+                                <input type="checkbox" id="checkbox">
+                                <div class="mode-container">
+                                    <i class="gg-sun"></i>
+                                    <i class="gg-moon"></i>
+                                </div>
+                            </label>
+                        </div>
+                    </nav>
+                </div>
+                <!-- //toggle switch for light and dark theme -->
+            </nav>
+        </div>
+    </header>
+    <!--//header-->
+
+    <!-- inner banner -->
+    <section class="inner-banner py-5">
+        <div class="w3l-breadcrumb py-lg-5">
+            <div class="container pt-sm-5 pt-4 pb-sm-4">
+                <h4 class="inner-text-title font-weight-bold pt-5">Emotion Chatbot</h4>
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="/">Home<span class="sr-only">(current)</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- //inner banner -->
+
+    <!-- contact -->
+    <section class="w3l-contact py-5" id="contact">
+            <div class="mx-auto pt-lg-4 pt-md-5 pt-4" style="max-width:1000px">
+                <div class="contact-block">
+                        {% block content %}
+              
+						
+						{% endblock %}
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- footer -->
+    <footer class="w3l-footer-29-main">
+        <div class="footer-29-w3l py-5">
+            <div class="container pt-md-5 pt-4">
+                <div class="w3l-footer-text-style">
+                    <div class="footer-list-cont d-flex align-items-center justify-content-between mb-5">
+                        <div class="main-social-footer-29">
+                            <a href="#facebook" class="facebook"><i class="fab fa-facebook-f"></i><span class="sr-only">(current)</span></a>
+                            <a href="#twitter" class="twitter"><i class="fab fa-twitter"></i><span class="sr-only">(current)</span></a>
+                            <a href="#instagram" class="instagram"><i class="fab fa-instagram"></i><span class="sr-only">(current)</span></a>
+                            <a href="#linkedin" class="linkedin"><i class="fab fa-linkedin-in"></i><span class="sr-only">(current)</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+    <button onclick="topFunction()" id="movetop" title="Go to top">
+        <span class="fas fa-level-up-alt" aria-hidden="true"></span>
+    </button>
+    <script>
+        // When the Citizen scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("movetop").style.display = "block";
+            } else {
+                document.getElementById("movetop").style.display = "none";
+            }
+        }
+
+        // When the Citizen clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    <!-- //move top -->
+
+<script src="{% static 'assets/js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'assets/js/theme-change.js' %}"></script>
+
+<script src="{% static 'assets/js/lightbox-plus-jquery.min.js' %}"></script>
+<script src="{% static 'assets/js/counter.js' %}"></script>
+    
+    <script>
+        $(document).ready(function () {
+
+            $('.client-single').on('click', function (event) {
+                event.preventDefault();
+
+                var active = $(this).hasClass('active');
+
+                var parent = $(this).parents('.testi-wrap');
+
+                if (!active) {
+                    var activeBlock = parent.find('.client-single.active');
+
+                    var currentPos = $(this).attr('data-position');
+
+                    var newPos = activeBlock.attr('data-position');
+
+                    activeBlock.removeClass('active').removeClass(newPos).addClass('inactive').addClass(
+                        currentPos);
+                    activeBlock.attr('data-position', currentPos);
+
+                    $(this).addClass('active').removeClass('inactive').removeClass(currentPos).addClass(
+                        newPos);
+                    $(this).attr('data-position', newPos);
+
+                }
+            });
+
+        }(jQuery));
+    </script>
+    <!-- //testimonial script -->
+
+    <!-- MENU-JS -->
+    <script>
+        $(window).on("scroll", function () {
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 80) {
+                $("#site-header").addClass("nav-fixed");
+            } else {
+                $("#site-header").removeClass("nav-fixed");
+            }
+        });
+
+        //Main navigation Active Class Add Remove
+        $(".navbar-toggler").on("click", function () {
+            $("header").toggleClass("active");
+        });
+        $(document).on("ready", function () {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+            $(window).on("resize", function () {
+                if ($(window).width() > 991) {
+                    $("header").removeClass("active");
+                }
+            });
+        });
+    </script>
+    <!-- //MENU-JS -->
+
+    <!-- disable body scroll which navbar is in active -->
+    <script>
+        $(function () {
+            $('.navbar-toggler').click(function () {
+                $('body').toggleClass('noscroll');
+            })
+        });
+    </script>
+    <!-- //disable body scroll which navbar is in active -->
+
+    <!--bootstrap-->
+	
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+
+</html>
