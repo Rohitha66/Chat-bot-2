@@ -1,9 +1,10 @@
-# Chat-bot-2
 My project is about an emotional Smart chat bot that helps people get better diagnosis.
 
 Software Need to Install for this project.
 	1. Python 3.6
 	2. MySQL 8.0
+
+ 
 Required Libraries for this project 
   pip install Django==3.1.3
 	pip install matplotlib==3.3.2
