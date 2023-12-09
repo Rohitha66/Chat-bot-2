@@ -1,4 +1,4 @@
-My project is about an emotional Smart chat bot that helps people get better diagnosis.
+My project is about an Mental Health related Smart chat bot that helps people get better diagnosis.View this file in code mode for better visibility.
 
 Software Need to Install for this project.
 	1. Python 3.6
